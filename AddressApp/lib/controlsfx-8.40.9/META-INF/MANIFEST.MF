@@ -1,0 +1,65 @@
+Manifest-Version: 1.0
+Implementation-Title: ControlsFX
+Bundle-Description: High quality UI controls and other tools to comple
+ ment the core JavaFX distribution
+Bundle-SymbolicName: org.controlsfx
+Implementation-Version: 8.40.9
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1433198479225
+Specification-Title: Java Version 8 Update 40
+Import-Package: com.sun.javafx,com.sun.javafx.collections,com.sun.java
+ fx.css,com.sun.javafx.css.converters,com.sun.javafx.event,com.sun.jav
+ afx.runtime,com.sun.javafx.scene.control,com.sun.javafx.scene.control
+ .behavior,com.sun.javafx.scene.control.skin,com.sun.javafx.scene.text
+ ,com.sun.javafx.scene.traversal,com.sun.javafx.tk,com.sun.javafx.webk
+ it,com.sun.webkit,javafx.animation,javafx.application,javafx.beans,ja
+ vafx.beans.binding,javafx.beans.property,javafx.beans.value,javafx.co
+ llections,javafx.collections.transformation,javafx.concurrent,javafx.
+ css,javafx.event,javafx.geometry,javafx.scene,javafx.scene.chart,java
+ fx.scene.control,javafx.scene.control.cell,javafx.scene.effect,javafx
+ .scene.image,javafx.scene.input,javafx.scene.layout,javafx.scene.medi
+ a,javafx.scene.paint,javafx.scene.shape,javafx.scene.text,javafx.scen
+ e.transform,javafx.scene.web,javafx.stage,javafx.util,javafx.util.con
+ verter,javax.swing,javax.swing.table,org.controlsfx.glyphfont,org.con
+ trolsfx.property.editor
+Tool: Bnd-2.1.0.20130426-122213
+Export-Package: org.controlsfx.control;uses:="javafx.beans.property,ja
+ vafx.collections,javafx.concurrent,javafx.css,javafx.event,javafx.geo
+ metry,javafx.scene,javafx.scene.control,javafx.scene.image,javafx.sce
+ ne.input,javafx.scene.paint,javafx.stage,javafx.util,org.controlsfx.c
+ ontrol.action,org.controlsfx.property.editor",org.controlsfx.control.
+ action;uses:="javafx.beans,javafx.beans.property,javafx.collections,j
+ avafx.event,javafx.scene,javafx.scene.control,javafx.scene.input,org.
+ controlsfx.control",org.controlsfx.control.cell;uses:="javafx.scene.i
+ mage,javafx.scene.media,javafx.scene.paint,org.controlsfx.control",or
+ g.controlsfx.control.decoration;uses:="javafx.collections,javafx.geom
+ etry,javafx.scene",org.controlsfx.control.spreadsheet;uses:="javafx.b
+ eans.property,javafx.collections,javafx.event,javafx.scene,javafx.sce
+ ne.control,javafx.util,javafx.util.converter",org.controlsfx.control.
+ table,org.controlsfx.control.table.model,org.controlsfx.control.textf
+ ield;uses:="javafx.beans.property,javafx.event,javafx.scene,javafx.sc
+ ene.control,javafx.util",org.controlsfx.dialog;uses:="javafx.beans,ja
+ vafx.beans.property,javafx.collections,javafx.concurrent,javafx.event
+ ,javafx.scene,javafx.scene.control,javafx.scene.effect,javafx.scene.t
+ ext,javafx.util,org.controlsfx.control,org.controlsfx.control.action"
+ ,org.controlsfx.glyphfont;uses:="javafx.beans.property,javafx.scene.c
+ ontrol,javafx.scene.paint,org.controlsfx.tools",org.controlsfx.proper
+ ty;uses:="javafx.collections,org.controlsfx.control,org.controlsfx.pr
+ operty.editor",org.controlsfx.property.editor;uses:="javafx.beans.val
+ ue,javafx.scene,javafx.util,org.controlsfx.control",org.controlsfx.to
+ ols;uses:="javafx.beans.value,javafx.scene,javafx.scene.control,javaf
+ x.scene.layout,javafx.scene.paint,javafx.stage,javafx.util",org.contr
+ olsfx.validation;uses:="javafx.beans.property,javafx.scene.control,or
+ g.controlsfx.validation.decoration",org.controlsfx.validation.decorat
+ ion;uses:="javafx.scene,javafx.scene.control,org.controlsfx.control.d
+ ecoration,org.controlsfx.validation"
+Bundle-Name: ControlsFX
+Bundle-Version: 8.40.9
+Private-Package: impl.build.transifex,impl.org.controlsfx,impl.org.con
+ trolsfx.autocompletion,impl.org.controlsfx.behavior,impl.org.controls
+ fx.i18n,impl.org.controlsfx.skin,impl.org.controlsfx.spreadsheet,impl
+ .org.controlsfx.tools,impl.org.controlsfx.tools.rectangle,impl.org.co
+ ntrolsfx.tools.rectangle.change,impl.org.controlsfx.version
+Created-By: 1.8.0_40-ea (Oracle Corporation)
+Specification-Version: 8.40.9
+
