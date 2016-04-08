@@ -8,7 +8,7 @@ import org.testfx.matcher.control.*;
 import javafx.geometry.Point2D;
 
 
-public class Test_AndereControls extends FxRobot  {
+public class Test_AndereControls_IT extends FxRobot  {
 		
 	@Before
     public void setup() throws Exception {

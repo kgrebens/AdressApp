@@ -14,7 +14,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
 
 
-public class Test_Beispiel extends FxRobot  {
+public class Test_Beispiel_IT extends FxRobot  {
 		
 	@Before
     public void setup() throws Exception {
