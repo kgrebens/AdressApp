@@ -25,7 +25,7 @@
   			<nativeInstallers />
   		</configuration>
       </plugin>
-      <plugin>
+<!--       <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <version>2.19.1</version>
@@ -39,11 +39,10 @@
                 <configuration>
                   <includes>
                     <include>*IT.java</include>
-                  </includes>
-                  <argLine>${robot.config} ${jacoco.agent.it.argLine}</argLine>
+                  </includes>                  
                 </configuration>
               </execution>
-              <execution>
+               <execution>
                 <id>system-tests</id>
                 <goals>
                   <goal>integration-test</goal>
@@ -58,7 +57,7 @@
               </execution>
             </executions>
           </plugin>
-    </plugins>
+ -->    </plugins>
   </build>
   <dependencies>
   	<dependency>
