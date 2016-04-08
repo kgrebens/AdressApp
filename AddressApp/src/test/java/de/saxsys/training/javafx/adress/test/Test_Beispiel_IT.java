@@ -1,5 +1,6 @@
 package de.saxsys.training.javafx.adress.test;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.testfx.api.FxAssert;
@@ -92,5 +93,12 @@ public class Test_Beispiel_IT extends FxRobot  {
         FxAssert.verifyThat("#Delete", NodeMatchers.isNotNull());
         final Button button_delete = lookup("#Delete").queryFirst();
         clickOn(button_delete);
+    }
+    
+    @After
+    public void cleanStage() throws Exception {               
+        
+        FxToolkit.cleanupStages();
+        
     }
 }
