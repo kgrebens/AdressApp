@@ -1,174 +1,195 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>AdressApp</groupId>
-  <artifactId>AdressApp</artifactId>
-  <version>0.0.1</version>
-  <organization>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>AdressApp</groupId>
+ <artifactId>AdressApp</artifactId>
+ <version>0.0.1</version>
+ <organization>
   <name>Saxsys</name>
-  </organization>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-  		<groupId>com.zenjava</groupId>
-  		<artifactId>javafx-maven-plugin</artifactId>
-  		<version>8.1.3</version>
-  		<configuration>
-  			<mainClass>de.saxsys.training.javafx.address.MainApp</mainClass>
-  			<nativeInstallers />
-  		</configuration>
-      </plugin>
-<!--       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
-            <executions>
-              <execution>
-                <id>integration-tests</id>
-                <goals>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-                <configuration>
-                  <includes>
-                    <include>*IT.java</include>
-                  </includes>                  
-                </configuration>
-              </execution>
-               <execution>
-                <id>system-tests</id>
-                <goals>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-                <configuration>
-                  <includes>
-                    <include>*ST.java</include>
-                  </includes>
-                  <argLine>${robot.config} ${jacoco.agent.it.argLine}</argLine>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin> 
-          -->
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <executions>
-                <execution>
-                    <id>copy-dependencies</id>
-                    <phase>prepare-package</phase>
-                    <goals>
-                        <goal>copy-dependencies</goal>
-                    </goals>
-                    <configuration>
-                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        <includeScope>compile</includeScope>
-                        <excludeTransitive>true</excludeTransitive>
-                        <overWriteReleases>false</overWriteReleases>
-                        <overWriteSnapshots>false</overWriteSnapshots>
-                        <overWriteIfNewer>true</overWriteIfNewer>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>2.6</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <mainClass>de.saxsys.training.javafx.address.MainApp</mainClass>
-                    </manifest>
-                </archive>
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>make-my-jar-with-dependencies</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>2.4.3</version>
-            <configuration>
-                <shadedArtifactAttached>false</shadedArtifactAttached>
-                <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
-                <transformers>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                        <resource>META-INF/services/javax.ws.rs.ext.Providers</resource>
-                    </transformer>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                        <resource>META-INF/spring.factories</resource>
-                    </transformer>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                        <resource>META-INF/spring.handlers</resource>
-                    </transformer>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                        <resource>META-INF/spring.schemas</resource>
-                    </transformer>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                        <resource>META-INF/spring.tooling</resource>
-                    </transformer>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
-                    </transformer>
-                </transformers>
-            </configuration>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>shade</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
- </plugins>
-  </build>
-  <dependencies>
-  	<dependency>
-  		<groupId>org.controlsfx</groupId>
-  		<artifactId>controlsfx</artifactId>
-  		<version>8.40.10-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.controlsfx</groupId>
-  		<artifactId>controlsfx</artifactId>
-  		<version>8.40.10</version>
-  	</dependency>
-  	<dependency>
-        <groupId>org.testfx</groupId>
-        <artifactId>testfx-core</artifactId>
-        <version>4.0.1-alpha</version>
-        <scope>test</scope>
-    </dependency>
-        <dependency>
-            <groupId>org.testfx</groupId>
-            <artifactId>testfx-junit</artifactId>
-            <version>4.0.1-alpha</version>
-            <scope>test</scope>
-        </dependency>
-  </dependencies>
-  
-  
-  
-  
+ </organization>
+
+ <properties>
+  <robot.config>
+   -Dtestfx.robot=glass -Dglass.platform=Monocle
+   -Dmonocle.platform=Headless -Dprism.order=sw
+   -Dprism.text=t2k <!-- Workaround: 
+    https://github.com/MachinePublishers/jBrowserDriver/commit/035a1e2e5d1a2fda9c61fa976b5d4249e68b1b4e -->
+   -Djava.ext.dirs="${java.ext.dirs};${settings.localRepository}\\org\\testfx\\openjfx-monocle\\1.8.0_60"
+  </robot.config>
+ </properties>
+
+ <build>
+  <plugins>
+   <plugin>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.3</version>
+    <configuration>
+     <source>1.8</source>
+     <target>1.8</target>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>com.zenjava</groupId>
+    <artifactId>javafx-maven-plugin</artifactId>
+    <version>8.1.3</version>
+    <configuration>
+     <mainClass>de.saxsys.training.javafx.address.MainApp</mainClass>
+     <nativeInstallers />
+    </configuration>
+   </plugin>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.19.1</version>
+      <configuration>
+       <argLine>${robot.config} </argLine>
+      </configuration>
+<!--     <executions> -->
+<!--      <execution> -->
+<!--       <goals> -->
+<!--        <goal>integration-test</goal> -->
+<!--        <goal>verify</goal> -->
+<!--       </goals> -->
+<!--       <configuration> -->
+<!--        <includes> -->
+<!--         <include>*IT.java</include> -->
+<!--        </includes> -->
+<!--        <argLine>${robot.config} </argLine> -->
+<!--       </configuration> -->
+<!--      </execution> -->
+<!--     </executions> -->
+   </plugin>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <executions>
+     <execution>
+      <id>copy-dependencies</id>
+      <phase>prepare-package</phase>
+      <goals>
+       <goal>copy-dependencies</goal>
+      </goals>
+      <configuration>
+       <outputDirectory>${project.build.directory}/lib</outputDirectory>
+       <includeScope>compile</includeScope>
+       <excludeTransitive>true</excludeTransitive>
+       <overWriteReleases>false</overWriteReleases>
+       <overWriteSnapshots>false</overWriteSnapshots>
+       <overWriteIfNewer>true</overWriteIfNewer>
+      </configuration>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.6</version>
+    <configuration>
+     <archive>
+      <manifest>
+       <addClasspath>true</addClasspath>
+       <mainClass>de.saxsys.training.javafx.address.MainApp</mainClass>
+      </manifest>
+     </archive>
+     <descriptorRefs>
+      <descriptorRef>jar-with-dependencies</descriptorRef>
+     </descriptorRefs>
+    </configuration>
+    <executions>
+     <execution>
+      <id>make-my-jar-with-dependencies</id>
+      <phase>package</phase>
+      <goals>
+       <goal>single</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>2.4.3</version>
+    <configuration>
+     <shadedArtifactAttached>false</shadedArtifactAttached>
+     <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
+     <transformers>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+       <resource>META-INF/services/javax.ws.rs.ext.Providers</resource>
+      </transformer>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+       <resource>META-INF/spring.factories</resource>
+      </transformer>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+       <resource>META-INF/spring.handlers</resource>
+      </transformer>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+       <resource>META-INF/spring.schemas</resource>
+      </transformer>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+       <resource>META-INF/spring.tooling</resource>
+      </transformer>
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" />
+      <transformer
+       implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
+      </transformer>
+     </transformers>
+    </configuration>
+    <executions>
+     <execution>
+      <goals>
+       <goal>shade</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
+ <dependencies>
+  <dependency>
+   <groupId>org.controlsfx</groupId>
+   <artifactId>controlsfx</artifactId>
+   <version>8.40.10-SNAPSHOT</version>
+  </dependency>
+  <dependency>
+   <groupId>org.controlsfx</groupId>
+   <artifactId>controlsfx</artifactId>
+   <version>8.40.10</version>
+  </dependency>
+  <dependency>
+   <groupId>org.testfx</groupId>
+   <artifactId>testfx-core</artifactId>
+   <version>4.0.1-alpha</version>
+   <scope>test</scope>
+  </dependency>
+  <dependency>
+   <groupId>org.testfx</groupId>
+   <artifactId>testfx-junit</artifactId>
+   <version>4.0.1-alpha</version>
+   <scope>test</scope>
+  </dependency>
+  <dependency>
+   <groupId>org.testfx</groupId>
+   <artifactId>openjfx-monocle</artifactId>
+   <version>1.8.0_60</version>
+  </dependency>
+ </dependencies>
+ <repositories>
+  <repository>
+   <id>saxsysthirdparty</id>
+   <url>http://nexus.saxsys.de/content/repositories/thirdparty/</url>
+  </repository>
+ </repositories>
+
+
+
 </project>
