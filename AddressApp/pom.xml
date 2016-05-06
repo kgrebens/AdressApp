@@ -12,9 +12,12 @@
   <robot.config>
    -Dtestfx.robot=glass -Dglass.platform=Monocle
    -Dmonocle.platform=Headless -Dprism.order=sw
-   -Dprism.text=t2k <!-- Workaround: 
-    https://github.com/MachinePublishers/jBrowserDriver/commit/035a1e2e5d1a2fda9c61fa976b5d4249e68b1b4e -->
+   
+   <!-- Workaround: 
+    https://github.com/MachinePublishers/jBrowserDriver/commit/035a1e2e5d1a2fda9c61fa976b5d4249e68b1b4e -->   
+  <!-- -Dprism.text=t2k 
    -Djava.ext.dirs="${java.ext.dirs};${settings.localRepository}\\org\\testfx\\openjfx-monocle\\1.8.0_60"
+   -->
   </robot.config>
  </properties>
 
