@@ -22,13 +22,10 @@ public class Test_AndereControls_IT extends FxRobot  {
     public void arbeite_mit_Controls() {
         // when: 
     	
-    	final MenuButton menu_hilfe = lookup("Help").queryFirst();
-    	clickOn(menu_hilfe);
+    	clickOn("Help");
+    	clickOn("Dev Test");
     	
-    	final Label menu_devtest = lookup("Dev Test").queryFirst();
-    	clickOn(menu_devtest);
-    	
-    	final Slider slidy = lookup("#slider").queryFirst();
+    	final Slider slidy = lookup("#slider").query();
     	    	
     	Point2D punkt1 = new Point2D(slidy.getScaleX(),slidy.getScaleY());
     	Point2D punkt2 = new Point2D(slidy.getScaleX()+150,slidy.getScaleY());

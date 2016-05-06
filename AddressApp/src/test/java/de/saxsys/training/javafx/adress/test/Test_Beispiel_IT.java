@@ -26,34 +26,14 @@ public class Test_Beispiel_IT extends FxRobot  {
 
 	@Test
     public void new_Entry() {
-	    // when:
-	    
+	    // when:	    
 	    FxAssert.verifyThat("#New", NodeMatchers.isNotNull());
-        final Button button_new = lookup("#New").queryFirst();
-        clickOn(button_new);
-	    
-	    // Vorname eintragen
-	    final TextField test_firstNameField = lookup("#firstNameField").queryFirst();
-	    doubleClickOn(test_firstNameField).write("Kay");
-	    
-	    // Nachname nachtragen
-        final TextField test_lastNameField = lookup("#lastNameField").queryFirst();
-        doubleClickOn(test_lastNameField).write("Grebenstein");
-	    
-        // Strasse eintragen
-        final TextField test_streetField = lookup("#streetField").queryFirst();
-        doubleClickOn(test_streetField).eraseText(0);
-        doubleClickOn(test_streetField).write("Fritz-Foerster-Platz 2");
-        
-        // TextField postalCodeField;
-        
-        
-        //  TextField cityField;
-        
-        // DatePicker birthdayField;
-        
-        final Button button_Ok = lookup("#Ok").queryFirst();
-        clickOn(button_Ok);
+        clickOn("#New");	    
+	    doubleClickOn("#firstNameField").write("Kay");
+	    doubleClickOn("#lastNameField").write("Grebenstein");
+	    doubleClickOn("#streetField").eraseText(0);
+        doubleClickOn("#streetField").write("Fritz-Foerster-Platz 2");    
+        clickOn("#Ok");
         
         // then:
         FxAssert.verifyThat("Kay", LabeledMatchers.hasText("Kay"));
@@ -66,18 +46,18 @@ public class Test_Beispiel_IT extends FxRobot  {
     public void click_Edit() {
         // when:    	 	    	
    	    FxAssert.verifyThat("Meier", NodeMatchers.isNotNull());
-    	final TableCell test_cell = lookup("Meier").queryFirst();
+    	final TableCell test_cell = lookup("Meier").query();
     	clickOn(test_cell);
 
     	FxAssert.verifyThat("#Edit", NodeMatchers.isNotNull());
-    	final Button button_edit = lookup("#Edit").queryFirst();
+    	final Button button_edit = lookup("#Edit").query();
     	clickOn(button_edit);
     	
     	FxAssert.verifyThat("#lastNameField", NodeMatchers.isNotNull());
-    	final TextField tf_Nachname = lookup("#lastNameField").queryFirst();
+    	final TextField tf_Nachname = lookup("#lastNameField").query();
     	doubleClickOn(tf_Nachname).write("Müller");
     	
-    	final Button button_Ok = lookup("#Ok").queryFirst();
+    	final Button button_Ok = lookup("#Ok").query();
     	clickOn(button_Ok);
     	               
         // then:
@@ -87,11 +67,11 @@ public class Test_Beispiel_IT extends FxRobot  {
     @Test
     public void loesche_Eintrag() {
         FxAssert.verifyThat("Kunz", NodeMatchers.isNotNull());
-        final TableCell test_cell_Kunz = lookup("Kunz").queryFirst();
+        final TableCell test_cell_Kunz = lookup("Kunz").query();
         clickOn(test_cell_Kunz);
         
         FxAssert.verifyThat("#Delete", NodeMatchers.isNotNull());
-        final Button button_delete = lookup("#Delete").queryFirst();
+        final Button button_delete = lookup("#Delete").query();
         clickOn(button_delete);
     }
     
