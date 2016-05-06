@@ -8,19 +8,19 @@
   <name>Saxsys</name>
  </organization>
 
+<!-- 
  <properties>
   <robot.config>
    -Dtestfx.robot=glass
    -Dglass.platform=Monocle
    -Dmonocle.platform=Headless
    -Dprism.order=sw   
-   <!-- Workaround: 
-    https://github.com/MachinePublishers/jBrowserDriver/commit/035a1e2e5d1a2fda9c61fa976b5d4249e68b1b4e -->   
    -Dprism.text=t2k 
    -Djava.ext.dirs="${java.ext.dirs};${settings.localRepository}\\org\\testfx\\openjfx-monocle\\1.8.0_60"
   
   </robot.config>
  </properties>
+ -->
 
  <build>
   <plugins>
@@ -46,9 +46,11 @@
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <version>2.19.1</version>
+      <!--
       <configuration>
        <argLine>${robot.config} </argLine>
       </configuration>
+       -->
 <!--     <executions> -->
 <!--      <execution> -->
 <!--       <goals> -->

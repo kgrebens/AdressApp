@@ -8,15 +8,19 @@ import org.testfx.matcher.control.*;
 import javafx.geometry.Point2D;
 
 
+// import static org.testfx.api.FxAssert.verifyThat;
+// import static org.testfx.service.query.impl.NodeQueryUtils.hasText;
+
 public class Test_AndereControls_IT extends FxRobot  {
-	
-    
+	   
 	@Before
     public void setup() throws Exception {
 		FxToolkit.registerPrimaryStage();
 		FxToolkit.setupApplication(MainApp.class);
 		FxToolkit.showStage();		
-	}	
+	}
+	
+		
 	
     @Test
     public void arbeite_mit_Controls() {
@@ -50,6 +54,8 @@ public class Test_AndereControls_IT extends FxRobot  {
         FxToolkit.cleanupStages();
         
     }
+
+    
     
 
 }
