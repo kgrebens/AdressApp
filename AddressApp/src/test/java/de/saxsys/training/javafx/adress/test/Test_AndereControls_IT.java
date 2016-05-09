@@ -22,7 +22,7 @@ public class Test_AndereControls_IT extends FxRobot  {
 	
 	
 		
-	
+	/*
     @Test
     public void arbeite_mit_Controls() {
         // when: 
@@ -46,16 +46,16 @@ public class Test_AndereControls_IT extends FxRobot  {
     	
         // then:
         FxAssert.verifyThat("#label", LabeledMatchers.hasText("100.0"));
-    }   
+    } 
+    */  
     
     /*
     @After
-    public void cleanStage() throws Exception {               
-        
-        FxToolkit.cleanupStages();
-        
+    public void cleanStage() throws Exception {    
+        FxToolkit.cleanupStages();        
     }
     */
+    
 
     
     
