@@ -48,12 +48,14 @@ public class Test_AndereControls_IT extends FxRobot  {
         FxAssert.verifyThat("#label", LabeledMatchers.hasText("100.0"));
     }   
     
+    /*
     @After
     public void cleanStage() throws Exception {               
         
         FxToolkit.cleanupStages();
         
     }
+    */
 
     
     

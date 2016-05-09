@@ -80,10 +80,11 @@ public class Test_Beispiel_IT extends FxRobot  {
         clickOn(button_delete);
     }
     
+    /*
     @After
     public void cleanStage() throws Exception {               
         
         FxToolkit.cleanupStages();
         
-    }
+    }*/
 }
