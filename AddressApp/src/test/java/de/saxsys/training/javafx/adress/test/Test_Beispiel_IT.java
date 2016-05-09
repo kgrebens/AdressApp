@@ -13,6 +13,7 @@ import de.saxsys.training.javafx.address.MainApp;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
+import org.testfx.util.WaitForAsyncUtils;
 
 
 public class Test_Beispiel_IT extends FxRobot  {
@@ -34,6 +35,8 @@ public class Test_Beispiel_IT extends FxRobot  {
 	    doubleClickOn("#streetField").eraseText(0);
         doubleClickOn("#streetField").write("Fritz-Foerster-Platz 2");    
         clickOn("#Ok");
+        
+        WaitForAsyncUtils.waitForFxEvents();
         
         // then:
         FxAssert.verifyThat("Kay", LabeledMatchers.hasText("Kay"));
@@ -59,6 +62,8 @@ public class Test_Beispiel_IT extends FxRobot  {
     	
     	final Button button_Ok = lookup("#Ok").query();
     	clickOn(button_Ok);
+    	
+    	WaitForAsyncUtils.waitForFxEvents();
     	               
         // then:
         FxAssert.verifyThat("Müller", LabeledMatchers.hasText("Müller"));

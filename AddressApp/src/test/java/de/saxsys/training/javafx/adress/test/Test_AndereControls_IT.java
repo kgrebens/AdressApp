@@ -20,6 +20,7 @@ public class Test_AndereControls_IT extends FxRobot  {
 		FxToolkit.showStage();		
 	}
 	
+	
 		
 	
     @Test
@@ -39,11 +40,10 @@ public class Test_AndereControls_IT extends FxRobot  {
  
     	System.out.println(s_punkt1);
     	System.out.println(s_punkt2);
-
     	
     	this.drag(s_punkt1);
-    	this.dropTo(s_punkt2);
-    	    	               
+    	this.dropTo(s_punkt2);   	
+    	
         // then:
         FxAssert.verifyThat("#label", LabeledMatchers.hasText("100.0"));
     }   
