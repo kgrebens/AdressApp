@@ -1,59 +1,29 @@
 package de.saxsys.training.javafx.adress.test;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Rule;
 
 import org.testfx.api.FxAssert;
 import org.testfx.api.FxRobot;
-import org.testfx.api.FxService;
 import org.testfx.api.FxToolkit;
 import org.testfx.matcher.base.NodeMatchers;
 import org.testfx.matcher.control.LabeledMatchers;
+import org.testfx.service.support.CaptureSupport;
 
-import java.awt.GraphicsEnvironment;
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-
-import com.google.common.base.Predicate;
-import org.hamcrest.Matcher;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.testfx.api.FxRobot;
-import org.testfx.api.FxToolkit;
-import org.testfx.service.finder.NodeFinder;
-import org.testfx.service.finder.NodeFinderException;
-import org.testfx.service.finder.WindowFinder;
-import org.testfx.service.support.CaptureSupport;
-import org.testfx.service.support.WaitUntilSupport;
 import org.testfx.util.WaitForAsyncUtils;
-
-import static org.junit.Assume.assumeFalse;
 import static org.testfx.api.FxService.serviceContext;
-
-
 import de.saxsys.training.javafx.address.MainApp;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
-import org.testfx.util.WaitForAsyncUtils;
-
 
 public class Test_Beispiel_IT extends FxRobot  {
 		
@@ -138,12 +108,12 @@ public class Test_Beispiel_IT extends FxRobot  {
         clickOn(button_delete);
     }
     
-    /*
+    
     @After
     public void cleanStage() throws Exception {               
         
         FxToolkit.cleanupStages();
         
-    }*/
+    }
 }
 

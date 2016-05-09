@@ -1,5 +1,30 @@
 package de.saxsys.training.javafx.adress.test;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import org.testfx.api.FxAssert;
+import org.testfx.api.FxRobot;
+import org.testfx.api.FxToolkit;
+import org.testfx.matcher.base.NodeMatchers;
+import org.testfx.matcher.control.LabeledMatchers;
+import org.testfx.service.support.CaptureSupport;
+
+import java.io.File;
+import java.util.Date;
+import javafx.scene.image.Image;
+import javafx.stage.Screen;
+import org.testfx.util.WaitForAsyncUtils;
+import static org.testfx.api.FxService.serviceContext;
+import de.saxsys.training.javafx.address.MainApp;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TextField;
+
 import org.junit.*;
 import org.testfx.api.*;
 import javafx.scene.control.*;
@@ -12,6 +37,9 @@ import javafx.geometry.Point2D;
 // import static org.testfx.service.query.impl.NodeQueryUtils.hasText;
 
 public class Test_AndereControls_IT extends FxRobot  {
+    
+    private static final CaptureSupport captureSupport = serviceContext().getCaptureSupport();
+
 	   
 	@Before
     public void setup() throws Exception {
@@ -20,9 +48,14 @@ public class Test_AndereControls_IT extends FxRobot  {
 		FxToolkit.showStage();		
 	}
 	
+	public static File captureScreenshot(String text) {
+        Path captureFile = Paths.get("screenshot_" + text + "_" + new Date().getTime() + ".png");
+        Image captureImage = captureSupport.captureRegion(Screen.getPrimary().getBounds());
+        captureSupport.saveImage(captureImage, captureFile);
+        return captureFile.toFile();
+    }
 	
-		
-	/*
+	
     @Test
     public void arbeite_mit_Controls() {
         // when: 
@@ -42,19 +75,21 @@ public class Test_AndereControls_IT extends FxRobot  {
     	System.out.println(s_punkt2);
     	
     	this.drag(s_punkt1);
-    	this.dropTo(s_punkt2);   	
+    	this.dropTo(s_punkt2);   
+    	
+        Test_Beispiel_IT.captureScreenshot("arbeite_mit_Controls()");
     	
         // then:
         FxAssert.verifyThat("#label", LabeledMatchers.hasText("100.0"));
-    } 
-    */  
+    }
+     
     
-    /*
+    
     @After
     public void cleanStage() throws Exception {    
         FxToolkit.cleanupStages();        
     }
-    */
+    
     
 
     
