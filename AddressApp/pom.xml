@@ -44,29 +44,23 @@
 
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
+    <artifactId>maven-failsafe-plugin</artifactId>
     <version>2.19.1</version>
-      
+    <executions>
+     <execution>
+      <id>integration-tests</id>
+      <goals>
+       <goal>integration-test</goal>
+       <goal>verify</goal>
+      </goals>
       <configuration>
-       <argLine>${robot.config} </argLine>
+       <includes>
+        <include>*IT.java</include>
+       </includes>
+       <argLine>${robot.config}</argLine>
       </configuration>
-      
-<!--        
-     <executions>
-        <execution>
-       <goals> 
-        <goal>integration-test</goal> 
-        <goal>verify</goal> 
-       </goals> 
-       <configuration> 
-        <includes> 
-         <include>*IT.java</include> 
-        </includes> 
-        <argLine>${robot.config} </argLine> 
-       </configuration> 
-      </execution> 
-     </executions>
-     -->
+     </execution>
+    </executions>
    </plugin>
 
    <plugin>
