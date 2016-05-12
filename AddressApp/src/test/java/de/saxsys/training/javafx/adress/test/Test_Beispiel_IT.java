@@ -18,9 +18,12 @@ import java.io.File;
 import java.util.Date;
 import javafx.scene.image.Image;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
+
 import org.testfx.util.WaitForAsyncUtils;
 import static org.testfx.api.FxService.serviceContext;
 import de.saxsys.training.javafx.address.MainApp;
+import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
@@ -31,9 +34,10 @@ public class Test_Beispiel_IT extends FxRobot  {
     
 	@Before
     public void setup() throws Exception {
-		FxToolkit.registerPrimaryStage();
+	    Stage stage = FxToolkit.registerPrimaryStage();
 		FxToolkit.setupApplication(MainApp.class);
-		FxToolkit.showStage();				
+		FxToolkit.showStage();
+		// stage.showAndWait();
     } 
 	
 	public static File captureScreenshot(String text) {

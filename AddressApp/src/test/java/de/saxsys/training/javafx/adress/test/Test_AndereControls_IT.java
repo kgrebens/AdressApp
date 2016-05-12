@@ -10,42 +10,40 @@ import org.junit.Test;
 import org.testfx.api.FxAssert;
 import org.testfx.api.FxRobot;
 import org.testfx.api.FxToolkit;
-import org.testfx.matcher.base.NodeMatchers;
 import org.testfx.matcher.control.LabeledMatchers;
 import org.testfx.service.support.CaptureSupport;
 
+import javafx.application.Application;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.TimeoutException;
+
 import javafx.scene.image.Image;
 import javafx.stage.Screen;
-import org.testfx.util.WaitForAsyncUtils;
+import javafx.stage.Stage;
+
 import static org.testfx.api.FxService.serviceContext;
 import de.saxsys.training.javafx.address.MainApp;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TextField;
-
-import org.junit.*;
-import org.testfx.api.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import de.saxsys.training.javafx.address.MainApp;
-import org.testfx.matcher.control.*;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
-
-
-// import static org.testfx.api.FxAssert.verifyThat;
-// import static org.testfx.service.query.impl.NodeQueryUtils.hasText;
+import org.testfx.framework.junit.ApplicationTest;
 
 public class Test_AndereControls_IT extends FxRobot  {
+
     
     private static final CaptureSupport captureSupport = serviceContext().getCaptureSupport();
-
-	   
+    
+       
 	@Before
     public void setup() throws Exception {
 		FxToolkit.registerPrimaryStage();
 		FxToolkit.setupApplication(MainApp.class);
-		FxToolkit.showStage();		
+		FxToolkit.showStage();	
 	}
 	
 	public static File captureScreenshot(String text) {
@@ -89,6 +87,9 @@ public class Test_AndereControls_IT extends FxRobot  {
     public void cleanStage() throws Exception {    
         FxToolkit.cleanupStages();        
     }
+    
+
+    
     
     
 

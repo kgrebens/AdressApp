@@ -51,20 +51,22 @@
        <argLine>${robot.config} </argLine>
       </configuration>
       
-<!--     <executions> -->
-<!--      <execution> -->
-<!--       <goals> -->
-<!--        <goal>integration-test</goal> -->
-<!--        <goal>verify</goal> -->
-<!--       </goals> -->
-<!--       <configuration> -->
-<!--        <includes> -->
-<!--         <include>*IT.java</include> -->
-<!--        </includes> -->
-<!--        <argLine>${robot.config} </argLine> -->
-<!--       </configuration> -->
-<!--      </execution> -->
-<!--     </executions> -->
+<!--        
+     <executions>
+        <execution>
+       <goals> 
+        <goal>integration-test</goal> 
+        <goal>verify</goal> 
+       </goals> 
+       <configuration> 
+        <includes> 
+         <include>*IT.java</include> 
+        </includes> 
+        <argLine>${robot.config} </argLine> 
+       </configuration> 
+      </execution> 
+     </executions>
+     -->
    </plugin>
 
    <plugin>
