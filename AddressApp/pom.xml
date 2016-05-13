@@ -8,16 +8,16 @@
   <name>Saxsys</name>
  </organization>
 
- 
+
  <properties>
   <robot.config>
    -Dtestfx.robot=glass
    -Dglass.platform=Monocle
    -Dmonocle.platform=Headless
-   -Dprism.order=sw   
-   -Dprism.text=t2k 
+   -Dprism.order=sw
+   -Dprism.text=t2k
    -Djava.ext.dirs="${java.ext.dirs};${settings.localRepository}\\org\\testfx\\openjfx-monocle\\1.8.0_60"
-  
+
   </robot.config>
  </properties>
 
@@ -40,6 +40,22 @@
      <mainClass>de.saxsys.training.javafx.address.MainApp</mainClass>
      <nativeInstallers />
     </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.19.1</version>
+    <configuration>
+     <argLine>${robot.config} </argLine>
+    </configuration>
+    <executions>
+     <execution>
+      <id>default-test</id>
+      <configuration>
+       <skip>true</skip>
+      </configuration>
+     </execution>
+    </executions>
    </plugin>
 
    <plugin>
@@ -156,7 +172,7 @@
    </plugin>
   </plugins>
  </build>
- <dependencies>  
+ <dependencies>
   <dependency>
    <groupId>org.controlsfx</groupId>
    <artifactId>controlsfx</artifactId>
